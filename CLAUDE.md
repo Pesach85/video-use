@@ -46,7 +46,7 @@
 - Categoria inventario: fork AI/video.
 
 ### Architettura (contesto)
-_Revisione 2026-10-16, metodo Cum scire, fonte GitHub `Pesach85/video-use` @ `9184ba3dbb89` (sola lettura)._
+_Revisione 2026-10-16, metodo Cum scire, fonte GitHub `Pesach85/video-use` @ `9184ba3dbb89` (sola lettura); riverifica puntuale 2026-10-18 @ `f6bdfc9`._
 - **Stack**: Python ≥3.10 (requests, librosa, matplotlib, pillow, numpy; extra `manim`), ffmpeg esterno, trascrizione ElevenLabs (servizio esterno) [VERIFICATO: `pyproject.toml`, README @`9184ba3dbb89`]
 - **Struttura** [VERIFICATO: albero @`9184ba3dbb89`]:
   - `SKILL.md`, `install.md`: istruzioni per l'agente
@@ -54,7 +54,7 @@ _Revisione 2026-10-16, metodo Cum scire, fonte GitHub `Pesach85/video-use` @ `91
   - `skills/manim-video/`: sotto-skill animazioni; `tests/`: test render fps/orientamento; `static/`, `poster.html`
 - **Flusso dati**: cartella di girato → `transcribe` (ElevenLabs) → transcript/timeline → tagli+grade via ffmpeg (`render.py`) → `final.mp4`; memoria sessione in `project.md` [VERIFICATO: README; INFERITO: ordine helper]
 - **Comandi build/test**: IGNOTO (nessun workflow CI; `tests/` esiste ma runner non dichiarato: pytest INFERITO)
-- **Confini / cosa NON toccare**: `.env` (solo `.env.example`); niente chiamate reali ElevenLabs (vedi `HUB_INTEGRATION.md`, MOCK); fork 1 avanti (solo `HUB_INTEGRATION.md`, `9184ba3dbb89`) / 2 indietro rispetto a `browser-use/video-use` [VERIFICATO: API compare 2026-10-16]
+- **Confini / cosa NON toccare**: `.env` (solo `.env.example`); niente chiamate reali ElevenLabs (vedi `HUB_INTEGRATION.md`, MOCK); fork di `browser-use/video-use`; file locali: `HUB_INTEGRATION.md`, `CLAUDE.md` [VERIFICATO: API compare 2026-10-18]
 - **UI / design**: N/A (chat con agente; `poster.html` solo promozionale) [INFERITO: nome file]
 - **Glossario**: *take* (ripresa grezza) · *grade* (color grading) · *timeline view* · *filler words* · *project.md* (memoria sessione)
 - IGNOTO: 1 campo (comandi test)
